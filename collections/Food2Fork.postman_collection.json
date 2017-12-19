@@ -1,0 +1,135 @@
+{
+	"info": {
+		"name": "Food2Fork",
+		"_postman_id": "586fe0ce-eedc-2e56-330d-01cedc144741",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Validate Search",
+			"description": "",
+			"item": [
+				{
+					"name": "1A Get List of Chicken Recipies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "61603c7d-96f5-4d5f-b043-95d0e31e77b9",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"title\", jsonData.recipes[0].title);"
+								]
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://food2fork.com/api/search?key={{APIKEY}}&q=shredded%20chicken",
+							"protocol": "http",
+							"host": [
+								"food2fork",
+								"com"
+							],
+							"path": [
+								"api",
+								"search"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{APIKEY}}",
+									"equals": true
+								},
+								{
+									"key": "q",
+									"value": "shredded%20chicken",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "1B Validate First Chicken Recipe Result",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2b01e1e6-b37b-41ea-96a1-b6552a6417c3",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://food2fork.com/api/search?key={{APIKEY}}&q={{title}}",
+							"protocol": "http",
+							"host": [
+								"food2fork",
+								"com"
+							],
+							"path": [
+								"api",
+								"search"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{APIKEY}}",
+									"equals": true
+								},
+								{
+									"key": "q",
+									"value": "{{title}}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7b55c81b-5b3c-466b-8497-29a2434d23ca",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8ab025ba-deba-4dc0-9a3a-f50e5ba7b3c0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
