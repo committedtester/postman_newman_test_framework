@@ -8,7 +8,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "newman run ./collections/Food2Fork.postman_collection.json -d ./authentication/Food2ForkAPIKey.json"
+    "localtest": "newman run ./collections/Food2Fork.postman_collection.json -d ./authentication/Food2ForkAPIKey.json",
+    "cloudtest": "newman run https://www.getpostman.com/collections/1f0e6686237309a5413b -d ./authentication/Food2ForkAPIKey.json"   
   },
   "repository": {
     "type": "git",

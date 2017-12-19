@@ -12,7 +12,8 @@
 }]
 
 # To Execute
-* Run 'npm test' from the terminal
+* Run 'npm run cloudtest' from the terminal for the collection in the cloud
+* Run 'npm run localtest' for the local collection json
 
 # To Modify
 * Install PostMan
