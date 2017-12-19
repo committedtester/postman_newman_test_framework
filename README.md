@@ -8,13 +8,14 @@
 * The format of the file is a basic one
 
 [{
-    "APIKEY":"<YOUR KEY HERE>"
+    "APIKEY":"YOUR KEY HERE"
 }]
 
 # To Execute
 * Run 'npm test' from the terminal
 
 # To Modify
+* Install PostMan
 * Import the collection into your Postman and edit, remember to export back into the collections directory
 
 # Notes
